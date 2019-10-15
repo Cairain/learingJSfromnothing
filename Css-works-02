@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>No.2 - 初步接触 CSS 2D 变形</title>
+	<style type="text/css">
+		 .box0 {margin:40px auto;}
+		.box1 {
+			transform:skewX(30deg);
+				-webkit-transform:skewX(30deg);
+				-moz-transform:skewX(30deg);
+				
+				}
+		.box2{
+			transform:scale(.5,1);
+			-webkit-transform:scale(.5,1);
+			-moz-transform:scale(.5,1);
+		}
+		.box3 {
+			transform:rotate(45edeg);
+			-webkit-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+			margin:100px;
+			width:200px;
+			
+			height:100px;
+		}
+		.box4 {
+			transform:translate(10px,20px);
+			-webkit-transform:translate(10px,20px);
+			-moz-transform:translate(10px,20px);
+			margin:50px;
+		}
+		.box5 {	
+			-webkit-transform:matrix(0.5, 0.52358, 0, 1, 100, 20);
+			transform:matrix(0.5, 0.52358, 0, 1, 100, 20);
+			-moz-transform:matrix(0.5, 0.52358, 0, 1, 100, 20);
+			height:200px;
+			width:200px;
+		
+		}
+		
+	</style>
+	
+</head>
+<body>
+	<div class="all">
+		<div class="box0">box0</div>
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div style="height:100;width:100;margin:100;background-color:#fffee">BOX</div>
+		<div class="box5">box5</div>
+		
+	</div>
+		
+	<script src="jquery-3.4.1.min.js"></script>	
+	
+	</script>
+
+</body>
+</html>
