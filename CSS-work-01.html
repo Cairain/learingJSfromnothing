@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>No.1 - 制作一个简单的菜单动画效果</title>
+	<style type="text/css">
+		.itemframe {
+			text-align:center;
+		}
+		.processbar {
+			height:20px;
+			width:1px;
+			box-sizing:border-box;
+			background-color:#fffee;
+			display:inline-block;
+			transition:all 3s cubic-bezier(.46,1,.23,1.52);
+			-webkit-transition:all 3s cubic-bezier(.46,1,.23,1.52);
+			
+		}
+		.processbar.on  {
+			width:200px;
+			background-color:#00bcd4;
+			border:1px solid #00bcd4;
+			border-radius:8px;
+		} 
+	</style>
+	
+</head>
+<body>
+	<div class="itemframe">
+		<p>前段学院</p>
+		<div  class="processbar" ></div>
+		<div >
+			<button id="button" type="submit">切换样式</button>
+		</div>
+	</div>
+	<script src="jquery-3.4.1.min.js"></script>	
+	<script type="text/javascript">
+		$("#button").click(function(){$(".processbar").toggleClass("on");
+			})
+	</script>
+
+</body>
+</html>
