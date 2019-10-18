@@ -1,0 +1,51 @@
+
+.item-head {
+	margin: 0 0 0 20px;
+	font-weight:600;
+	font-size:1.5em;
+}
+.namelike {
+	padding:5px;
+	margin:5px 0 5px 0;
+}
+div.fileheader {
+	background-color:gray;
+	color:#fff;
+	width:100%;
+	height:100px;
+	padding-top:35px;
+	padding-left:20px;
+	padding-bottom:40px;
+	margin:0;
+	box-sizing:border-box;
+}
+.itemlist {
+	display:flex;
+	height:160px;
+	border:solid 1px #fff;
+	margin:0;
+	background-color:#bcbdb3e3;
+	padding:0;
+}
+.item-head {
+	width:15%;
+}
+.content {
+	width:85%;
+	background-color:#fff;
+	border:1px solid  #bcbdb3e3;
+}
+
+.csst {
+	display:block;
+}
+.csst .namelike {
+	display:inline-block;
+}
+div.content,.item-head{
+	height:160px;
+	
+	
+}
+
+
