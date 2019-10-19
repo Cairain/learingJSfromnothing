@@ -1,0 +1,118 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layoutecercising</title>
+	<style>
+		html,body,section,div,ul,li,h2,article {
+			padding:0;
+			margin:0;
+			box-sizing:border-box;
+		}
+		.sec {
+			margin:0 auto;
+			width:450px;
+			height:400px;
+		}
+		.sec ul {
+			padding-left:0;
+			margin-top:0;
+		}
+		.tablist {
+			display:block;
+			background-color:#66339989;
+			}
+		.tablist li  {
+			float:left;
+			list-style-type:none;
+			width:150px;
+			margin-left:0;
+			margin-right:0;
+			}
+		.tablist li a {
+			text-decoration:none;
+			line-height:3;
+			width:100%;
+			text-align:center;
+			background-color:skyblue;
+			display:inline-block;
+			color:black;
+		}
+		.tablist li.active a  {
+			color:white;
+			background-color:#663399;
+		}
+		.pobox {
+			position:relative;
+			clear:both;	
+			height:350px;
+		}
+		.pobox article {
+			position:absolute;
+			left:0;
+			top:0;
+			color:white;
+			padding:10px;
+			height:350px;
+			background-color:#663399;
+		}	
+		.sec .boxactive {
+			z-index:1;
+		}
+		</style>
+</head>
+<body>
+	<section class="sec">
+		<ul class="tablist">
+			<li class="active" ><a href="#">Tab-01</a></li>
+			<li><a href="#">Tab-02</a></li>
+			<li><a href="#">Tab-03</a></li>
+		</ul>
+		<div class="pobox">
+			<article class="boxactive">
+				<h2>Tab-1【NOW YOU SEE】</h2>
+				<p>男子惨遭变态监禁 艰难逃生 这是我见过最恐怖的点击解密游戏,你没有投稿没法给圆圆的东西啊,哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给,你两个小小的赞赞吧哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给</p>
+			</article>
+			<article>
+				<h2>Tab-2【NOW YOU SEE】</h2>
+				<p>男子惨遭变态监禁 艰难逃生 这是我见过最恐怖的点击解密游戏,你没有投稿没法给圆圆的东西啊,哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈,给你两个小小的赞赞吧</p>
+			</article>
+			<article>
+				<h2>Tab-3【NOW YOU SEE】</h2>
+				<p>男子惨遭变态监禁 艰难逃生 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈给这是我见过最恐怖的点击解密游戏,你没有投稿没法给圆圆的东哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈西啊,哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈,哈给你两个小小的赞赞吧</p>
+			</article>
+			<div style="clear:both;"></div>
+		</div>
+	</section>
+			<script>
+				var tabs = document.querySelectorAll('li');
+				var panels = document.querySelectorAll('article');
+
+				for(i = 0; i < tabs.length; i++) {
+				  var tab = tabs[i];
+				  setTabHandler(tab, i);
+				}
+
+				function setTabHandler(tab, tabPos) {
+				  tab.onclick = function() {
+					for(i = 0; i < tabs.length; i++) {
+					  if(tabs[i].getAttribute('class')) {
+						tabs[i].removeAttribute('class');
+					  }
+					}
+
+					tab.setAttribute('class', 'active');
+
+					for(i = 0; i < panels.length; i++) {
+					  if(panels[i].getAttribute('class')) {
+						panels[i].removeAttribute('class');
+					  }
+					}
+
+					panels[tabPos].setAttribute('class', 'boxactive');
+				  }
+				}
+	</script>
+</body>
+</html>
