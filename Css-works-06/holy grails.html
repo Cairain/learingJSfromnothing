@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>圣杯布局-经典布局我试一哈</title>
+	<style>
+	
+	body {
+	min-width:550px;
+	padding:0;
+	margin:0;
+	
+	margin:0 auto;
+}
+	.header {
+		height:100px;
+		background-color:skyblue;
+	}
+	.footer {
+		height:60px;
+		background-color:#878787;
+		clear:both;
+	}
+	.container{
+		padding-left:200px;
+		padding-right:150px;
+		overflow:hidden;
+		
+	}
+	.flo {
+		float:left;
+		position:relative;
+	}
+	
+	.left {
+		width:200px;
+		background-color:deeppink;
+		margin-left:-100%;
+		right:200px;
+		
+	}
+	.center {
+		width:100%;
+		color:blue;
+		height:200px;
+		
+	}
+	.right {
+		width:150px;
+		background-color:#fffeee;
+		margin-right:-150px;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="header">#header</div>
+	<div class="container">
+		<div class="center flo"> #center The he strategy is straightforward. The container div will have a liquid center and fixed-width padding on the side. The trick is then to get the left column to line up with the left padding and the right column with the right padding, leaving the center column to fill the liquid width of the container.he strategy is straightforward. The container div will have a liquid center and fixed-width padding on the side. The trick is then to get the left column to line up with the left padding and the right column with the right padding, leaving the center column to fill the liquid width of the container.stylesheet is almost as simple. Let’s say you want to have a left column with a fixed width of 200 pixels and a right column with a fixed width of 150 pixels. To simplify the comments, I’ll abbreviate the left, right, and center columns as LC, RC, and CC, respectively. The essential CSS is here:</div>
+		<div class="left flo">#left Simply replace the values with your desired dimensions and the grail is yours. The technique works in all modern browsers: Safari, Opera, Firefox, and (with the single-rule hack at the bottom) IE6. IE5.5 support would require at least a box-model hack, which is left as an exercise to the reader.</div>
+		<div class="right flo">#right he strategy is straightforward. The container div will have a liquid center and fixed-width padding on the side. The trick is then to get the left column to line up with the left padding and the right column with the right padding, leaving the center column to fill the liquid width of the container.he strategy is straightforward. The container div will have a liquid center and fixed-width padding on the side. The trick is then to get the left column to line up with the left padding and the right column with the right padding, leaving the center column to fill the liquid width of the container.he strategy is straightforward. The container div will have a liquid center and fixed-width padding on the side. The trick is then to get the left column to line up with the left padding and the right column with the right padding, leaving the center column to fill the liquid width of the container.</div>
+	</div>
+	<div class="footer">#footer</div>
+</body>
+</html>

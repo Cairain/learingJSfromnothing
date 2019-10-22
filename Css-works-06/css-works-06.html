@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>第七天到第八天：学习布局</title>
+  <link rel="stylesheet" ref="style_01.css">
+  <style>
+	* {
+		padding:0;
+		margin:0;
+	}
+	body {
+		font:16px/1.2 sans-serif;
+		
+	}
+	#header {
+		height:60px;
+		width:75em;
+		background-color:#141515;		
+		margin:0 auto;
+	}
+	#header:after, #imgnum:after  {
+		content:"";
+		clear:both;
+		display:block;
+	}
+	#header>span {
+		float:left;
+		line-height:1.8em;
+		margin-left:7em;
+		
+	}
+	#login {
+		float:right;
+		margin-right:7em;
+	}
+	#login a:link {
+		color:white;
+	}
+			
+	#footer {
+		height:100px;
+		width:75em;
+		background-color:#6d757a;
+		margin:0 auto;
+		text-align:center;
+		padding-top:20px;
+		margin-top:10px;
+	}
+	main {
+		width:75em;
+		margin:0 auto;
+	}
+	#banner {
+		height:18em;
+		width:100%;
+		background-color:#1cb018;
+	}
+	#banner .imgnum {
+		height:2em;
+		width:2.5%;
+		background-color:#c3ffc1;
+		float:left;
+		margin-right:10px;
+		line-height:2em;
+		text-align:center;
+		border: solid gray 1px;
+	}
+	 #imgnum {
+	   position:relative;
+	   left:56em;
+	   top:15.5em;
+	 }
+	 #imgnum .active {
+	   height:4em;
+	   margin-top:-2em;
+	   background-color:white;
+	 }
+	 #containter {
+		height:36em;
+		width:100%;
+	 }
+	 .con-box {
+		height:6em;
+		border-bottom:solid 1px #808080b3;
+		padding-left:8em;
+	 }
+	 .con-box .con-item {
+		 height:3.5em;
+		 line-height:3.5em;
+		 border:1px solid #808080b3;
+		 border-bottom:none;
+		 border-top-left-radius:2em;
+		 border-top-right-radius:2em;
+		 display:inline-block;
+		 width:7em;
+		 text-align:center;
+		 margin-top:2.5em;
+		 vertical-align:sup;
+		 
+	 }
+	 .con-box .con-item-active {
+		z-index:1;
+		position:relative;
+		padding-bottom:0;
+		background-color:#ffe;
+	 }
+	 .flexbox {
+		height:30em;
+		width:80%;
+		margin:10px auto;
+		position:relative;		
+	 }
+	 .con-box-flex {
+		display:flex;
+		position:absolute;
+		left:0;
+		top:0;
+		height:98%;
+		flex-wrap:wrap;
+		width:100%;
+		flex-direction:row;
+		justify-content:space-around;
+		align-items:center;
+		
+	 }
+	 .con-box-child {
+		height:32%;
+		border:1px solid black;
+		text-align:center;
+		}
+	.con-box-child p{
+		height:100%;
+		line-height:9.4em;
+		
+		
+	}
+	 .con-box-child:nth-of-type(1),
+	 .con-box-child:nth-of-type(2),
+	 .con-box-child:nth-of-type(3){
+		width:32%;
+	 }
+	 .con-box-child:nth-of-type(5),
+	 .con-box-child:nth-of-type(4),
+	 .con-box-child:nth-of-type(6) ,
+	  .con-box-child:nth-of-type(7){
+		width:24%;
+	 }
+	 .con-box-child:nth-of-type(8),
+	 .con-box-child:nth-of-type(9),
+	 .con-box-child:nth-of-type(10){
+		width:32%;
+	 }
+	 .flex-active {
+		z-index:1;
+	 }
+	 
+	 
+  </style>
+</head>
+<body>
+	<header id="header">
+		<span style="color:white;font-size:1.8em;">Logo</span>
+		<div id="login">
+			<span class="item-login"><a href="javascript:;">Github</a></span>
+			<span class="item-login"><a href="javascript:;">Register</a></span>
+			<span class="item-login"><a href="javascript:;">login</a></span>
+		</div>
+	</header>
+	<main>
+		<div id="banner">
+			<div id="imgnum">
+				<div class="imgnum">1</div>
+				<div class="imgnum active">2</div>
+				<div class="imgnum">3</div>
+				<div class="imgnum">4</div>
+			</div>
+		</div>
+		<div id="containter">
+			<div class="con-box">
+				<span class="con-item con-item-active">HOME</span>
+				<span class="con-item">PROFILE</span>
+				<span class="con-item">ABOUT</span>
+			</div>
+			<div class="flexbox">
+				<div class="con-box-flex  flex-active" style="background-color:#bfa">
+					<div class="con-box-child">
+						<p> HOME-content1</p>
+					</div>
+					<div class="con-box-child">
+						<p>content2</p>
+					</div>
+					<div class="con-box-child">
+						<p>content3</p>
+					</div>
+					<div class="con-box-child">
+						<p>content4</p>
+					</div>
+					<div class="con-box-child">
+						<p>content5</p>
+					</div>
+					<div class="con-box-child">
+						<p>content6</p>
+					</div>
+					<div class="con-box-child">
+						<p>content7</p>
+					</div>
+					<div class="con-box-child">
+						<p>content8</p>
+					</div>
+					<div class="con-box-child">
+						<p>content9</p>
+					</div>
+					<div class="con-box-child">
+						<p>content10</p>
+					</div>
+				</div>
+				<div class="con-box-flex" style="background-color:#663399">
+					<div class="con-box-child">
+						<p>PROFILE-content1</p>
+					</div>
+					<div class="con-box-child">
+						<p>content2</p>
+					</div>
+					<div class="con-box-child">
+						<p>content3</p>
+					</div>
+					<div class="con-box-child">
+						<p>content4</p>
+					</div>
+					<div class="con-box-child">
+						<p>content5</p>
+					</div>
+					<div class="con-box-child">
+						<p>content6</p>
+					</div>
+					<div class="con-box-child">
+						<p>content7</p>
+					</div>
+					<div class="con-box-child">
+						<p>content8</p>
+					</div>
+					<div class="con-box-child">
+						<p>content9</p>
+					</div>
+					<div class="con-box-child">
+						<p>content10</p>
+					</div>
+				</div>
+				<div class="con-box-flex"  style="background-color:deeppink">
+					<div class="con-box-child">
+						<p> ABOUT-content1</p>
+					</div>
+					<div class="con-box-child">
+						<p>content2</p>
+					</div>
+					<div class="con-box-child">
+						<p>content3</p>
+					</div>
+					<div class="con-box-child">
+						<p>content4</p>
+					</div>
+					<div class="con-box-child">
+						<p>content5</p>
+					</div>
+					<div class="con-box-child">
+						<p>content6</p>
+					</div>
+					<div class="con-box-child">
+						<p>content7</p>
+					</div>
+					<div class="con-box-child">
+						<p>content8</p>
+					</div>
+					<div class="con-box-child">
+						<p>content9</p>
+					</div>
+					<div class="con-box-child">
+						<p>content10</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer id="footer">
+		&copy;2018 ife.baidu.com
+	</footer>
+</body>
+</html>
