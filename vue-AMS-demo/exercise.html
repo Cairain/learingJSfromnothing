@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<title>vue day2</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="./js/vue.js"></script>
 		<style>
 			*{
 				padding: 0;
@@ -58,9 +59,9 @@
 			<div id='header'>添加品牌<div>
 			<div id="input">
 				<label>Id:<input type="text" v-model="id"></label>
-				<label>Name:<input type="text" v-model="name"></label>
+				<label>Name:<input type="text" v-model="name" @keyup.13="myadd"></label>
 				Add Brand:<input type="button"  style="height:30px;width:4%;"value="Addbrand" @click="myadd">
-				<label>搜索关键字:<input type="text" v-model="parte"></label>
+				<label v-color="'skyblue'">搜索关键字:<input type="text" v-model="parte" v-focus></label>
 			<table>
 			<thead>
 				<tr>
@@ -74,15 +75,39 @@
 				<tr v-for="cards in search(parte)" :key="cards.id" >
 					<td>{{cards.id}}</td>
 					<td>{{cards.name}}</td>
-					<td>{{cards.ctime}}</td>
+					<td>{{cards.ctime|dateformat}}</td>
 					<td><a href="" @click.prevent="delu(cards.id)">删除</a></td>
 				</tr>
 			</tbody>
 			</table>
 			</div>
 		</div>
-		<script src="vue.js"></script>
+		
 		<script type="text/javascript">
+			Vue.config.keyCodes.enter = 13;
+			Vue.directive('focus',{
+				inserted:function(el){
+					el.focus();
+				}
+			});
+			Vue.directive('color',{
+				bind:function(el, binding){
+					el.style.backgroundColor=binding.value;
+				}
+			})
+			
+			Vue.filter('dateformat',(dateStr) => {
+				var dt = new Date(dateStr);
+				var y = dt.getFullYear();
+				var m =( dt.getMonth() + 1).toString().padStart(2, "0");
+				var d = dt.getDate().toString().padStart(2, "0");
+				var h = dt.getHours().toString().padStart(2, "0").toString().padStart(2, "0");
+				var mi = dt.getMinutes().toString().padStart(2, "0");
+				var s = dt.getSeconds().toString().padStart(2, "0");
+				
+				return y + '-' + m +'-' + d + " " + h + ':'+ mi +':'+ s
+			})
+			
 			var vm = new Vue({
 				el:"#xusong",
 				data:{
