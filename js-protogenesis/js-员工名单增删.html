@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>table真删改联系</title>
+		<style>
+			table {
+				margin:50px auto;
+				border-collapse: collapse;
+			}
+			fieldset {
+				margin:50px auto;
+				margin-left: 38%;
+				margin-right: 38%;
+				padding:20px;
+			}
+			lable,input {
+				font-size: 1.3em;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			window.onload = function(){
+				// 点击超链接删除当行,阻止跳转页面
+				var allas = document.getElementsByTagName('a');
+				function cl(){for(let as of allas){
+					 let ul = as.parentNode.parentNode;
+					let hair = ul.children[0].innerHTML;
+					 as.onclick  = function(){
+						if(confirm('Are you sure to delete '+ hair +' ?'))
+						ul.remove();
+					 }
+				}};
+				//添加button事件
+				var submit = document.querySelector('input[type=button]');
+				submit.onclick = function(){
+					var inputs = document.querySelectorAll('input[type=text]');
+					var tr = document.createElement('tr');//创建tr
+					for(let inp of inputs){
+						var td = document.createElement('td');
+						var tdtext = document.createTextNode(inp.value);//td内容放入tr
+						td.appendChild(tdtext);
+						tr.appendChild(td);
+						inp.value ='';//清空输入框
+					}
+					var tbd = document.querySelector('tbody')//tr放入tbody
+					tr.appendChild(allas[0].parentElement.cloneNode(true))//补足含有a标签的
+					tbd.appendChild(tr);
+					allas = document.getElementsByTagName('a');
+					cl();
+				}
+				
+				cl();
+			}
+		</script>
+	</head>
+	<body>
+		<table border="1px solid #000" cellspacing="0" cellpadding="15px">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Family</td>
+					<td>Salay</td>
+					<td>&nbsp;</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>tom</td>
+					<td>tom@tom.com</td>
+					<td>5000</td>
+					<td><a href="javascript:;">Delete</a></td>
+				</tr>
+				<tr><td>tebdd</td>
+					<td>ghjio@qq.com</td>
+					<td>8000</td>
+					<td><a href="javascript:;">Delete</a></td>
+				</tr>
+				<tr>
+					<td>huiio</td>
+					<td>huiio@oo.com</td>
+					<td>90000</td>
+					<td><a href="javascript:;">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<fieldset>
+			<legend>添加信息</legend>
+			<lable>Name<br><input type="text" name="" id="" value="" /></lable><br>
+			<lable>Family<br><input type="text" name="" id="" value="" /></lable><br>
+			<lable>Salay<br><input type="text" name="" id="" value="" /></lable><br>
+			<input type="button" name="" id="" value="submit" />
+		</fieldset>
+	</body>
+</html>
