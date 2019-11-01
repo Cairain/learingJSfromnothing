@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{ 
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+			}
+			#line{
+				width: 0;
+				height: 100em;
+				border:solid .0625em aqua;
+				position: absolute;
+				left:62.5em;
+			}
+			#box1 { 
+				width: 12.5em;
+				height: 12.5em;
+				background-color: aqua;
+				position: absolute;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				function Move(ottion){
+					this._init(ottion);
+				};
+				Move.prototype = { 
+					_init:function(ottion){ 
+						this.el = ottion.el,
+						this.dir = ottion.dir,
+						this.seed = ottion.seed,
+						this.destination = ottion.destination
+					},
+					move:function(){ 
+						let objel = document.getElementById(this.el);
+						var initdir;
+						var timer;
+						 this.timer = setInterval(() =>{ 
+							if('left right'.indexOf(this.dir) != -1 ){
+								initdir = objel.offsetLeft;
+								if(this.destination < initdir){
+									this.seed = -this.seed;
+									};
+								objel.style.left = initdir + this.seed +'px';
+								if((this.destination > initdir && objel.offsetLeft >= this.destination ) || (this.destination < initdir && objel.offsetLeft <= this.destination )){
+									objel.style.left = this.destination + 'px';
+								};
+								if(objel.offsetLeft == this.destination){
+									clearInterval(this.timer);
+								}
+								
+							}else if('top bottom'.indexOf(this.dir) != -1 ){
+								initdir = objel.offsetTop;
+								if(this.destination < initdir){
+									this.seed = -this.seed;
+									};
+								objel.style.top = initdir + this.seed +'px';
+								if((this.destination > initdir && objel.offsetTop >= this.destination ) || (this.destination < initdir && objel.offsetTop <= this.destination )){
+									objel.style.top = this.destination + 'px';
+								};
+								if(objel.offsetTop == this.destination){
+									clearInterval(this.timer);
+								}
+							}else if(this.dir == 'width'){
+								initdir = objel.offsetWidth;
+								if(this.destination < initdir){
+									this.seed = -this.seed;
+									};
+								objel.style.width = initdir + this.seed +'px';
+								if((this.destination > initdir && objel.offsetWidth >= this.destination ) || (this.destination < initdir && objel.offsetWidth <= this.destination )){
+									objel.style.width = this.destination + 'px';
+								};
+								if(objel.offsetWidth == this.destination){
+									clearInterval(this.timer);
+								}
+							}else{ 
+								initdir = objel.offsetHeight;
+								if(this.destination < initdir){
+									this.seed = -this.seed;
+									};
+								objel.style.height = initdir + this.seed +'px';
+								if((this.destination > initdir && objel.offsetHeight >= this.destination ) || (this.destination < initdir && objel.offsetHeight <= this.destination )){
+									objel.style.height = this.destination + 'px';
+								};
+								if(objel.offsetHeight == this.destination){
+									clearInterval(this.timer);
+								};
+							};
+							
+							
+						},
+									50
+						);	
+						
+				
+					}}
+				let btn = document.getElementById('button');
+				btn.onclick = function(){ 
+				var btmv = new Move({ 
+					el:'box1',
+					dir:'width',
+					seed:30,
+					destination:1000
+				});
+				btmv.move();
+				var btmv1 = new Move({
+					el:'box1',
+					dir:'height',
+					seed:30,
+					destination:1000
+				});
+				btmv1.move();
+				};	
+			}
+		</script>
+	</head>
+
+	<body>
+		<button id="button">I take it just do it</button>
+		<div id ="box1"></div>
+		<div id="line"></div>		
+	</body>
+
+</html>
