@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jaueryExercise-filmRanking</title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul li{
+				list-style: none;
+				border: solid 1px #909090;
+				margin: -1px -1px ;
+				font-size: 18px;
+				font-family: "microsoft yahei";
+			}
+			h1 {
+				text-align: center;
+				color:aquamarine;
+				font-size: 24px;
+				line-height: 40px;
+			}
+			#frame {
+				width:400px;
+				height:600px;
+				margin:80px auto;
+				border: solid 1px #909090;
+				background:antiquewhite ;
+			}
+			ul span{
+				display: inline-block;
+				margin:3px 0;
+				margin-right: 10px;
+				padding:5px 5px;
+				width:20px;
+				height: 25px;
+				background: #a1a1a1;
+				font-size: 16px;
+				line-height: 20px;
+				text-align: center;
+				}
+			.content{
+				border-top: 1px solid #909090;
+				padding-left:10px;
+				padding-top:10px;
+				color:#666;
+				font-size:16px ;
+				display: none;
+			}
+			.slice {
+				display: block;
+			}
+		</style>
+		<script>
+			$(function(){
+				$('li').mouseenter(function(){
+					let index = $('li').index(this);
+					$('.content').eq(index).addClass('slice');
+					$(this).css({
+						'color':'#0ec214'
+					});
+					$(this).find('span').css({
+						'backgroundColor':'#fff'
+					});
+					});
+				$('li').mouseleave(function(){
+					let index = $('li').index(this);
+					$('.content').eq(index).removeClass('slice');
+					$(this).css({
+						'color':''
+					});
+					$(this).find('span').css({
+						'backgroundColor':''
+					});
+					});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="frame">
+			<h1>电影排行榜</h1>
+			<ul>
+				<li class="title">
+					<span>1</span>月榜单第一名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+				<li class="title">
+					<span>2</span>月榜单第二名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+				<li class="title">
+					<span>3</span>月榜单第三名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+				<li class="title">
+					<span>4</span>月榜单第四名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+				<li class="title">
+					<span>5</span>月榜单第五名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+				<li class="title">
+					<span>6</span>月榜单第六名
+					<div class="content"><img src="film.jpg" alt="" style="float:left;width:110px;height:110px;margin-right:8px;margin-top:8px;">为保障开国大典国旗顺利升起，林治远（黄渤饰）争分夺秒排除万难，用一个惊心动魄的未眠之夜确保立国大事“万无一失”；为研制中国第一颗原子弹，高远（张译饰）献身国防科技事业，奉献了自己的青春和爱情；为确保五星红旗分秒不差飘扬在香港上空，升旗手朱涛（杜江饰）刻苦训练不懈怠、女港警莲姐（惠英红饰）兢兢业业守平安、外交官安文彬（王洛勇饰）与英国人谈判16轮分秒不让；喜迎奥运之际，出租车司机（葛优饰）将自己视若珍宝的开幕式门票送给了远赴京城的汶川地震孤儿。一个个鲜活生动的普通人的奋斗故事，勾连起一段段难以磨灭的全民记忆</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
