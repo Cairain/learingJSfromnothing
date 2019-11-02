@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				list-style: none;
+			}
+			#box{
+				height: 450px;
+				width: 600px;
+				margin: 80px auto;
+				border:solid 1px #ddd;
+			}
+			#naV {
+				width: 100%;
+				height:50px;
+				background: #77435d;
+				color: aliceblue;
+			}
+			#naV li{
+				display: inline-block;
+				float:left;
+				width:150px;
+				font-size: 20px;
+				line-height: 50px;
+				text-align: center;
+			}
+			img {
+				display: none;
+			}
+			.show {
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			$(window).ready(function(){
+				$('#naV li').mouseenter(function(){
+					$(this).css({
+						background:'#0ec5b4',
+						color:'white'
+					});
+					$(this).siblings().css({
+						background:'',
+						color:''
+					});
+					let index = $(this).index();
+					var $li = $('#navcon li').eq(index);
+					$li.find('img').addClass('show');
+					$li.siblings().find('img').removeClass('show');
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="naV">
+				<li><span>我是第一</span></li>
+				<li><span>我是第二</span></li>
+				<li><span>我是第三</span></li>
+				<li><span>我是第四</span></li>
+			</ul>
+			<ul id="navcon">
+				<li><img src="tab01.png" alt="" class='show'></li>
+				<li><img src="tab02.png" alt=""></li>
+				<li><img src="tab03.png" alt=""></li>
+				<li><img src="tab04.png" alt=""></li>
+			</ul>
+		</div>
+	</body>
+</html>
