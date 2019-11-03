@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+	<head>
+		<meta charset="utf-8">
+		<title>SeconderyMenuslidedown</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li {
+				list-style: none;
+			}
+			#menu{
+				height:400px;
+				width:300px;
+				margin-top: 40px ;
+				margin-left: 300px;
+				border-radius: 10px;
+				display: inline-block;
+			}
+			#menu>li{
+				list-style: none;
+				line-height: 50px;
+				font-size: 20px;
+				text-indent: 3em;
+				border: 1px solid #a8a8a8;
+				border-bottom: none;
+			}
+			#menu>li:first-child{
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+			}
+			#menu>li:last-child{
+				border-bottom: 1px solid #a8a8a8;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+			}
+			#menu>li>.sicon {
+				cursor: pointer;
+				font-size: 14px;
+				padding-right:20px;
+				margin-left: 50px;
+				color:#999;
+				width:10px;
+				height:10px;
+				background: url(icon.png) no-repeat 30px 6px;
+			}
+			.secondry {
+				background-color: #87ceeb61;
+				color: #464646;
+				display: none;
+			}
+			.secondry>li{
+				list-style: none;
+				line-height: 50px;
+				font-size: 20px;
+				text-indent: 3em;
+				border-top: 1px solid #a8a8a8;
+				border-bottom: none;
+			}
+			.secondry>li:hover{
+				background: skyblue;
+			}
+			
+			#sl{
+				margin:80px auto;
+				display: inline-block;
+				margin-left: 200px;
+				position: absolute;
+				top:10px;
+				border: 1px solid #fff;
+				border-radius: 10px;
+			}
+			#menuS{
+				width: 400px;
+				line-height: 50px;
+			/* 	height:50px; */
+				background:#777;
+			}
+			#menuS:after {
+				content:"";
+				clear: left;
+				display: block;
+			}
+			#menuS>li {
+				box-sizing: border-box;
+				width:25%;
+				height: 50px;
+				text-align: center;
+				color: #fff;
+				float: left;
+				border-left:1px solid #fff;
+				cursor: pointer;
+				border-bottom: 1px solid #fff
+			}
+			#menuS>li:hover{
+				background: #87ceeb;
+			}
+			.son{
+				width:100px;
+				background: #87ceeb61;
+				border: 1px solid #fff;
+				border-radius: 10px;
+				display: none;
+			}
+			.son>li {
+				line-height: 30px;
+				color:#777;
+				/* transform: scale(1.1,1.1); */
+			}
+			.son>li:hover {
+				background: #87CEEB;
+			}
+			.son>li:first-child{
+				margin-top: 3px;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+			}
+			.son>li:last-child {
+				border-bottom-left-radius: 6px;
+				border-bottom--right-radius: 6px;
+			} 
+		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				function sliddn(el){$(el).text('收起');
+				$(el).stop().animate({
+					backgroundPositionY:-36
+				},.1);
+				$(el).next('ul.secondry').slideDown(400);};
+				function slidup(el){
+					$(el).text('展开');
+					$(el).stop().animate({
+						backgroundPositionY:6
+					},.1);
+					$(el).next('ul.secondry').slideUp(400);};
+			//flag is undefined,and its boolean is flase. The tags shoud not share the flag.
+				$('span.sicon').click(function(){
+					if(!this.flag){
+						sliddn(this);
+					}else{
+						slidup(this);
+					}
+					this.flag = !this.flag;
+				});
+			//To animate for div.sl what's on the right.
+			//.stop()  End the animation queues before starting a new one.
+				$('#menuS>li').hover(
+				function(){
+					$(this).children('.son').stop().slideDown(500);
+				},
+				function(){
+					$(this).children('.son').stop().slideUp(500);});	
+			})
+		</script>
+	</head>
+	<body>
+		<div id="frame">
+			<ul id="menu">
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+				<li>一级菜单<span class="sicon">展开</span>
+							<ul class="secondry">
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+								<li>我是二级菜单</li>
+							</ul>
+				</li>
+			</ul>
+			<div id="sl">
+				<ul id="menuS">
+					<li>一单单那
+						<ul  class="son">
+							<li>大头呦</li>
+							<li>大头呦</li>
+							<li>大头呦</li>
+						</ul>
+					</li>
+					<li>一单那
+					<ul  class="son">
+						<li>superman</li>
+						<li>man</li>
+						<li>super</li>
+						<li>n</li>
+					</ul>
+					</li>
+					<li>一单单
+					<ul  class="son">
+						<li>周杰伦</li>
+						<li>suman</li>
+						<li>bat</li>
+						<li>superman</li>
+						<li>hellokity</li>
+					</ul>
+					</li>
+					<li>单单
+					<ul  class="son">
+						<li>About</li>
+						<li>Copyright</li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
