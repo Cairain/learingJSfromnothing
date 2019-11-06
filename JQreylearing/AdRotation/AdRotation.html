@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+	<head>
+		<meta charset="utf-8">
+		<title>slidedown</title>
+		<style type="text/css">
+		 *{
+			 padding: 0;
+			 margin: 0;
+		 }	
+		 a {
+			 text-decoration: none;
+			 display: inline-block;
+			/* font-size: 0;   解决a标签与img不等高问题 */
+		 }
+		 #frame{
+			 width: 450px;
+			 height:675px;
+			/* background: skyblue; */
+			 margin: 50px auto;
+			overflow:hidden;
+			/* border: 1px aqua solid; */
+		 }
+		
+		 #frame>#box{
+			 list-style: none;
+			 position: relative;
+			 width: 400%;
+		 }
+		  #frame>#box>li {
+			  position: absolute;
+			  left:0;
+			  top:0;
+			  
+		  }
+		 #box img {
+			 width: 450px;
+			 height:675px; 
+			 vertical-align: middle;  /* a标签默认baseline对齐,包裹图片会不等高 */
+			/* display: block;   解决a标签与img不等高问题 */
+		 }
+		div#icons{
+			 position: absolute;
+			 z-index: 2;
+			 top: 625px;
+			 left:167px;
+		 }
+		 div#icons >span{
+			 display: inline-block;
+			 width:30px;
+			 height: 30px;
+			 background-color: aqua;
+			 border: 1px solid #fff;
+			 border-radius: 50%;
+			 opacity: 0.3;
+			 margin-right: 10px; 
+			 cursor: pointer;
+		  }
+		div#icons >span.on {
+			  opacity: 1;
+		  }
+		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var $lis = $('#box>li');
+				var $icons = $('#icons>span');
+				var arr=[-1,0,1];//
+				var imA = [1,2,0];
+				var imind = [0,-1,1];
+				 $lis.each(function(i,el){
+					 $(this).css('left',arr[i]*(450)+'px');
+				 });
+				var arr2 = [-1,0,1];
+				var timer2
+			function main(){	
+					timer2= setInterval(function(){
+					var arr3 =[];
+					var arr4 = [];
+					arr2.forEach(function(e,ind){
+							var ii = ((arr2[ind]-1) === -2)?1:(arr2[ind]-1);
+						arr3.push(ii);
+						arr4.push(ii-arr[ind]);
+					});	
+					arr2 =arr3;
+					var zero = arr3.indexOf(1);
+					var one = arr3.indexOf(0);
+					var $zreo = $lis.eq(zero);
+					$zreo.css('z-index',0);
+					$zreo.siblings('li').css('z-index',1);
+					var timer;
+					var timer1;
+					var spanA = [2,0,1];       
+					clearTimeout(timer);
+					timer = setTimeout(function(){
+					$lis.each(function(ind,el){
+							$(this).css({
+								transform:'translateX('+ arr4[ind]*(450) + 'px)',
+								transition:'all 0.5s ease',
+								});
+							$icons.eq(spanA[one]).siblings().removeClass('on');
+							$icons.eq(spanA[one]).addClass('on');	
+							clearTimeout(timer1);	
+							timer1 = setTimeout(function(){
+							$lis.each(function(){
+								$(this).css('z-index',0);
+								})
+							},1000);	
+						}
+					);
+				},1000);
+					},4000);   }
+					//点击函数
+					clearInterval(timer2);
+					main();
+					$icons.click(function(){
+						var ix = $(this).index();
+						clearInterval(timer2);
+						clearTimeout(timer4);
+						$(this).siblings().removeClass('on');
+						$(this).addClass('on');
+						$lis.eq(imA[ix]).css('z-index',2);//imA[1,2,0]
+						$lis.eq(imA[ix]).stop(true,false).css({                       //imind = [0,-1,1];
+							transform:'translateX('+ imind[ix]*(450) + 'px)',
+							transition:'all 0.5s ease',
+							});
+						console.log((ix + '---'));
+						var timer4;
+						clearTimeout(timer4);
+						timer4 = setTimeout(function(){
+							clearInterval(timer2);
+							main();
+						},3000);
+						var timer3;
+						clearTimeout(timer3);	
+						timer3 = setTimeout(function(){
+						$lis.each(function(){
+							$(this).css('z-index',0);
+							})
+						},2500);
+						
+						
+					});
+			})
+		</script>
+	</head>
+	<body>
+		<h1 style="text-align: center;">关于轮播图片时不多加首图用transition解决的方法</h1>
+		<p style='display:inline-block;float: right;margin-right:300px;'>--------------图片少于等于三张时可使用</p>
+		<div id="frame">
+			<ul id="box">
+				<li>
+					<a href="javascript:;"><img src="mu01.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:;"><img src="zai01.jpg" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:;"><img src="liu01.jpg" alt=""></a>
+				</li>
+			<div id="icons">
+					<span style='z-index:0;' class='on'></span>
+					<span style='z-index:0;' ></span>
+					<span style='z-index:0;'></span>
+			</div>
+		</div>
+		<p>总结，先布局absolute图片分别在a =[-1,0,1]的位置，然后获取变化位置（a-1得2取1）得到b（b变化的，
+		下一轮定时开始时 新a=旧b ，），再用b减初始a（每次初a不变）得到c，设置css translatex=c*width，
+		这样会有一个z-index的bug。解决：首先b【i】=1，取的li【i】，定时器开始前：设置li[i]zindex为0，其他li设为1，定时器结束后清0。
+		上面步骤简化，可以定义带回调函数的定时器函数，可以少用一个定（延）时器。</p>
+	</body>
+</html>
