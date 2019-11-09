@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="" />
+		<meta charset="utf-8" />
+		<title>shiyong</title>
+		<style>
+			#wrap{
+				text-align: center;
+				width:100%;
+				height: 1000px;
+				background-color:rgba(0,0,0,.3);
+				position: relative;	
+			}
+			/* 
+			 背景图片设置给：绝对定位覆盖府元素  ，inner + z-index=-1 +filter模糊。
+			 bg rbga 设置给wrap
+			 */
+			 #wrap img {
+				 width: 701px;
+				 height:1000px ;
+				left: 600px;
+			 }
+			#wrap #inner { 
+				
+				position:absolute ;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+				 background:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573274124740&di=dc945ec4917c8adec3a6b05de3f32155&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731201616_pneln.jpg) no-repeat 50% 33%;
+				 background-size: cover;
+				 filter: blur(10px);
+			 }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573274124740&di=dc945ec4917c8adec3a6b05de3f32155&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F31%2F20180731201616_pneln.jpg" alt="">
+			<div id="inner"></div>
+		</div>
+	</body>
+</html>
+
