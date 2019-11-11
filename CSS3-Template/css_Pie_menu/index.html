@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>fan-shaped</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				position: fixed;
+				width: 50px;
+				height: 50px;
+				bottom: 50px;
+				right: 50px;
+			}
+			#wrap>img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width:50px;
+				height: 50px;
+			}
+			#wrap>.white{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				background: white;
+			}
+			#wrap>#menu{
+				display: inline-block;
+				position: absolute;
+				z-index: 1;
+				width: 50px;
+				height: 50px;
+				background: url(img/menu.png) no-repeat 0 0;
+				background-size: cover;
+				transition: 1s;
+			}
+			#hah{
+				width: 600px;
+				height: 100px;
+				text-align: center;
+				margin: 300px auto;
+				color: dimgray;
+				font: 50px/100px  "microsoft yahei";
+			}
+		</style>
+		<script type="text/javascript" src='index.js'></script>
+	</head>
+
+	<body>
+		<div id="hah">右下旋转菜单</div>
+		<div id="wrap">
+			<img src="img/back.png" alt="">
+			<img src="img/close.png" alt="">
+			<img src="img/full.png" alt="">
+			<img src="img/refresh.png" alt="">
+			<img src="img/savefile.png" alt="">
+			<div class='white'></div>
+			<i id="menu"></i>
+		</div>
+	</body>
+
+</html>
