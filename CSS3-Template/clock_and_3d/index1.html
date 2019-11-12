@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>fan-shaped</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap {
+				position: relative;
+				width: 400px;
+				height: 400px;
+				margin: 200px auto;
+				border: 1px solid #000;
+				border-radius: 50%;
+			}
+			#wrap >#pointer {
+				list-style: none;
+				position: relative;
+			}
+			#wrap >#pointer>li{
+				position: absolute;
+				width: 2px;
+				height: 20px;
+				background: #000000;
+				left: 199px;
+				transform-origin: 1px 200px;
+			}
+			#wrap >.hour{
+				position: absolute;
+				width: 8px;
+				height: 30px;
+				background: indigo;
+				left: 196px;
+				top: 170px;
+				transform-origin:bottom;
+			}
+			#wrap >.min{
+				position: absolute;
+				width: 4px;
+				height: 55px;
+				background: #000000;
+				left:198px ;
+				top: 145px;
+				transform-origin:bottom;
+			}
+			#wrap >.sec{
+				position: absolute;
+				width: 2px;
+				height: 80px;
+				background: maroon;
+				top: 120px;
+				left: 199px;
+				transform-origin:bottom;
+			}
+			#wrap >.cen{
+				position: absolute;
+				width: 10px;
+				height:10px;
+				border: 1px solid aqua;
+				border-radius: 50%;
+				background: aqua;
+				box-sizing:border-box ;
+				left: 195px;
+				top: 195px;
+			}
+			
+			
+		</style>
+		<script>
+		window.onload = function(){
+			var clock = document.getElementById('wrap');
+			var ulNode = document.getElementById('pointer');
+			var houNode = document.getElementsByClassName('hour')[0];
+			var minNode = document.getElementsByClassName('min')[0];
+			var secNode = document.getElementsByClassName('sec')[0];
+			var styleNode = document.getElementsByTagName('style')[0];
+			var  text = '';
+			var css = '';
+			for(let i=0;i <60; i++){
+				switch(i){
+					case 0:
+					text += '<li class="zero"></li>';
+					break;
+					case 15:
+					text += '<li class="fif"></li>';
+					break;
+					case 30:
+					text += '<li class="thr"></li>';
+					break;
+					case 45:
+					text += '<li class="forth"></li>';
+					break;
+					default:
+					text += '<li></li>';
+					break;
+				}
+				
+			};
+			ulNode.innerHTML=text;
+			for(let i=0;i <60; i++){
+				css  += '#wrap >#pointer>li:nth-child('+ (i+1)+'){transform:rotate(' + 6*(i)+ 'deg)}';
+			};
+			css += '#wrap >ul#pointer>li:nth-child(5n+1){height:30px;width:4px;}';
+			css += '#wrap >ul#pointer>.zero:after{content:"12";display:inline-block;font:30px/30px "Segoe Script";position: absolute;left:-16px;top:28px;}';
+			css += '#wrap >ul#pointer>.fif:after{content:"3";display:inline-block;font:30px/30px "Segoe Script";position: absolute;left:-6px;top:28px;transform:rotate(-90deg)}';
+			css += '#wrap >ul#pointer>.thr:after{content:"6";display:inline-block;font:30px/30px "Segoe Script";position: absolute;left:-10px;top:28px;transform:rotate(180deg)}';
+			css += '#wrap >ul#pointer>.forth:after{content:"9";display:inline-block;font:30px/30px "Segoe Script";position: absolute;left:-10px;top:28px;transform:rotate(90deg)}';
+			styleNode.innerHTML += css;
+			
+			var timeNow = new Date();
+			var sec = timeNow.getSeconds();
+			var min = timeNow.getMinutes() +sec/60;
+			var hou = timeNow.getHours() +min/60;
+			
+			secNode.style.transform = 'rotate('+sec*6 +'deg)';
+			minNode.style.transform = 'rotate('+ min*6+'deg)';
+			houNode.style.transform = 'rotate('+ hou*6 *5+'deg)';
+			
+			setInterval(function(){
+				secNode.style.transform = 'rotate('+(sec)*6 +'deg)';
+				minNode.style.transform = 'rotate('+ (min+sec/60)*6+'deg)';
+				houNode.style.transform = 'rotate('+(hou+sec/3600)*30+'deg)';
+				sec += 1;
+			},1000)	
+		}	
+		</script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<ul id="pointer"></ul>
+			<div class="hour"></div>
+			<div class="min"></div>
+			<div class="sec"></div>
+			<div class="cen"></div>
+		</div>
+	</body>
+
+</html>
