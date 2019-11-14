@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>tab卡片面向对象版本的增删改查</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body {
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap {
+				width: 1200px;
+				height: 800px;
+				margin: 100px auto;
+				border: 1px solid #869e22;
+			}
+			#wrap>#header {
+				height: 100px;
+				width: 100%;
+				border-bottom: 1px solid #fff;
+				box-sizing: border-box;
+				background: #1b1b1b;
+				color: #fff;
+			}
+			#wrap>#header>ul {
+				list-style: none;
+				display: inline-block;
+			}
+			#wrap>#header>ul>li {
+				display: inline-block;
+				float: left;
+				width: 150px;
+				height: 100%;
+				line-height: 100px;
+				border-right: 1px solid #fff;
+				box-sizing: border-box;
+				text-align: center;
+				position: relative;
+				opacity: .5;
+			}
+			#wrap>#header>ul>li.on {
+				background: #869E22;
+				color: #EEEEEE;
+				opacity: 1;
+			}
+			#wrap>#header>ul>li:hover {
+				cursor: pointer;
+				background: #229e93;
+				opacity: 1;
+			}
+			#wrap>#header>ul>li>.remove-icon{
+				display: inline-block;
+				width: 100%;
+			}
+			#wrap>#header>ul>li:after{
+				content:"x";
+				position:absolute ;
+				right: 0px;
+				top: 0px;
+				width: 20px;
+				height: 20px;
+				background: #c9c9c9;
+				color: #2b2b2b;
+				line-height: 1;
+				border-bottom-left-radius: 6px;
+			}
+			/* #wrap>#header>ul>li>.remove-icon:hover:after{
+				background: #000000;
+			} */
+			#wrap>#header>#add {
+				float: right;
+				width: 50px;
+				height: 50px;
+				margin: 25px 30px;
+				border: 1px solid #8e8e8e;
+				box-sizing: border-box;
+			}
+			#wrap>#header>#add span {
+				display: inline-block;
+				font-size: 24px;
+				width: 100%;
+				height: 100%;
+				line-height: 48px;
+				text-align: center;
+				color:#929292;
+				cursor:pointer;
+			}
+			#wrap>#content{
+				height: 100%;
+			}
+			#wrap>#content>article {
+				height: 100%;
+				padding: 40px;
+				background: #eee;
+				display: none;
+			}
+			#wrap>#content>article.ar-on {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<ul>
+					<li class="on"><span class="remove-icon">Tabcard01</span></li>
+					<li><span class="remove-icon">Tabcard02</span></li>
+					<li><span class="remove-icon">Tabcard03</span></li>
+				</ul>
+				<div id="add">
+					<span>+</span>
+				</div>
+			</div>
+			<div id="content">
+				<article class="ar-on">Article01</article>
+				<article>Article02</article>
+				<article>Article03</article>
+			</div>
+		</div>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
