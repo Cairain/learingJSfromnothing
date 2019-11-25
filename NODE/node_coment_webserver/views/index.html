@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>postComment</title>
+		<style type="text/css">
+			a {
+				text-decoration: none;
+				background: #00a1d6;
+				font-size: 20px;
+				line-height: 30px;
+			}
+			table {
+				 width: 100%;
+				 border-collapse: collapse;
+				 padding: 10px;
+				 font-size: 20px;
+				 line-height: 30px;
+				 margin-left: 20px;
+				 border: 1px solid #c9c9c9 ;
+			}
+			table tr{
+				 height: 40px; 
+				 width:100%;
+			}
+			table tr:not(:last-child) {
+				 border-bottom: 1px solid #c9c9c9;
+				  }
+			
+			table td {
+				 display: inline-block;
+				 margin: 20px 20px 20px 10px;
+				 color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="/post" style='display:inline-block;margin: 40px ;'> 发表评论 </a><br>
+		<table class="allcom" cellspacing="" cellpadding="10" >
+			<tbody>
+				{{each list}}
+				<tr>
+					<td>{{$value.name}}:</td>
+					<td>{{$value.comment}}</td>
+					<td style="float:right;padding-right:40px;">{{$value.ctime}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</body>
+</html>

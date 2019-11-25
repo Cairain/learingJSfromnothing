@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>评论本来可以用vue解决，不同处在于刷新是否回退</title>
+		<link rel="stylesheet" href="../public/main.css">
+	</head>
+	<body>
+		<form action="/justdoit" class="fm">
+			<label for="nameu"> 用户名： 
+				<input type="text" id="nameu" style="height:20px;width:850px;" name="name" required>
+			</label> 
+			<br>
+			<label for="xx">
+				<span>评论 :</span>
+				<textarea name="comment" id="xx" cols="123" rows="10" required></textarea>
+			</label>
+			<br>
+			<label for="">
+				<input type="submit" value="comment now">
+			</label>
+		</form>
+		<table class="allcom" cellspacing="" cellpadding="10" >
+			<tbody>
+				{{each list}}
+				<tr>
+					<td>{{$index + 1}}.</td>
+					<td>{{$value.name}}:</td>
+					<td>{{$value.comment}}。</td>
+					<td style="float:right;padding-right:40px;">{{$value.ctime}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</body>
+</html>

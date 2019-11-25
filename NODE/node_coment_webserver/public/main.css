@@ -1,0 +1,49 @@
+ * {
+	 padding: 0;
+	 margin: 0;
+ }
+ html, body {
+	 font:20px/1.3 'Microsoft yahei';
+ }
+ .fm {
+	 padding-left: 50px;
+ }
+ #nameu {
+	 margin: 20px auto;
+	 padding: 10px;
+ }
+ span {
+	 display: block;
+ }
+ #xx {
+	 resize: none;
+	 margin-bottom: 40px;
+	 margin-left: 80px;
+ }
+ input[type=submit] {
+	 font-size: 20px;
+	 height: 40px;
+	 margin: 15px 40px 40px 20px;
+ }
+ table {
+	 width: 100%;
+	 border-collapse: collapse;
+	 padding: 10px;
+	 font-size: 20px;
+	 line-height: 30px;
+	 margin-left: 20px;
+	 border: 1px solid #c9c9c9 ;
+ }
+ table tr{
+	 height: 40px; 
+	 width:100%;
+ }
+ table tr:not(:last-child) {
+	 border-bottom: 1px solid #c9c9c9;
+	  }
+
+ table td {
+	 display: inline-block;
+	 margin: 20px 20px 20px 10px;
+	 color: #333;
+ }
