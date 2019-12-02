@@ -1,0 +1,52 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+	padding: 50px;
+	font:16px 'Arial','sans-serif';
+}
+a {
+	color: #00b7ff;
+}
+ul{
+	list-style:none;
+}
+#content {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	background:#ffca9e;
+}
+#room {
+	margin-bottom:1em;
+}
+#message {
+	width:690px;
+	height: 600px;
+	overflow: auto;
+	color: #2b94ff;
+	background-color:#101920;
+	margin-bottom: 1em;
+	margin-right: 10px;
+}
+#room-list {
+	float:right;
+	width:100px;
+	height:300px;
+	overflow: auto;
+}
+#room-list div {
+	border-bottom:1px solid #eee;
+}
+#room-list div:hover {
+	background: #c9c9c9;
+}
+#send-message {
+	width:700px;
+	margin-bottom:1em;
+	margin-right:1em;
+}
+#help {
+	font: 10px 'italic';
+}

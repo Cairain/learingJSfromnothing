@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>chartrooom</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div id="content">
+			<div id="room"></div>
+			<div id="room-list"></div>
+			<div id="messages"></div>
+			<form action="" id="send-form">
+				<input type="" name="" id="send-message" value="" />
+				<input type="submit" id="send-button" value='发送消息'>
+				<div id="help">
+					chart 命令
+					<ul>
+						<li>更改昵称：<code>/nick [usename]</code></li>
+						<li>加入/创建房间: <code>/join [room name]</code></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src='http://localhost:8081/socket.io/socket.io.js'></script>
+		<script type="text/javascript" src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+		<script type="text/javascript" src='./chart.js'></script>
+		<script type="text/javascript" src='./chart_ui.js'></script>
+	</body>
+</html>

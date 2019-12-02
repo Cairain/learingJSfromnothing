@@ -1,0 +1,9 @@
+{
+	"name": "chartrooms",
+	"version": "1.0.1",
+	"description": "My chart room learning from node book.",
+	"dependencies": {
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
+}
