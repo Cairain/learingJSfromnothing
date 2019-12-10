@@ -1,0 +1,33 @@
+{{include './icon-svg.html'}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light pl-5" style="font-size:1.5em;">
+	<svg style="width:87px;height:50px">
+		<use x='0' y="0" xlink:href="#mm">
+	</svg>
+	<a class="navbar-brand" href="/">bss首页</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav  d-flex justify-content-end ">
+      <li class="nav-item ml-3 mr-3">
+        <a class="nav-link" href="#">API <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ml-3 ">
+        <a class="nav-link" href="#">新手入门</a>
+      </li>
+      <li class="nav-item  ml-3 {{hid}}">
+        <a class="nav-link dropdown " href="/login"  aria-disabled="true" >
+          登录
+        </a>
+      </li>
+      <li class="nav-item ml-3 {{hid}} ">
+        <a class="nav-link drop-down" href="/register" tabindex="-1" aria-disabled="true">注册</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 pr-5 d-flex justify-content-end" action="">
+      <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+      <button class="btn btn-default mb-2 my-sm-0 bg-secondary" type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
