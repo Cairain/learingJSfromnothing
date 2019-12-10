@@ -1,10 +1,11 @@
-###blog-cms-bss
+### blog-cms-bss
 
 
 
 
-##路由设计
+## 路由设计
 |路径       |方法|get参数|post参数|              是否需要登录 |备注         |
+------------|:--|:------|:-------|:-------------------------|:-------------
 |/          |GET|       |        |                          |  渲染首页  |
 |/register  |GET|       |        |                         |  渲染注册页  |
 |/register  |POST|      |email,nickname,passward  |        |渲染注册请求   |
@@ -17,7 +18,7 @@
 	   + get数据 TODO
 
 
-##访问json-server数据库
+## 访问json-server数据库
 	 + 跨域
 	 + 代理
 	 + request模块解决跨域访问
