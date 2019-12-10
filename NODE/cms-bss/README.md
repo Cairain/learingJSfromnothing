@@ -19,13 +19,15 @@
 
 
 ## 访问json-server数据库
-	 + 跨域
-	 + 代理
-	 + request模块解决跨域访问
-		-requset(option,function(e,res,body))  options包含url，header，请求body, method ,请求是否为表单数据， 请求是否为json，
-		请求是否需要压缩， 解码，或者用户名密码验证。
-		callback 参数 e =》error ，res =》request， body=》 请求主体
-	 + get查询
-	 + post创建
-	 + put更新
-	 + delete删除
+   +  跨域
+   +  代理
+   +  request模块解决跨域访问
+      - requset(option,function(e,res,body))  options包含url，header，请求body, method ,请求是否为表单数据， 请求是否为json，
+      - 请求是否需要压缩， 解码，或者用户名密码验证。
+      - callback 参数 e =》error ，res =》request， body=》 请求主体
+   +  get查询
+   +  post创建
+   +  put更新
+   +  delete删除
+## express -session的sessionid的数据库保存问题
+   - 可以用json-sever 另写接口 TODO
