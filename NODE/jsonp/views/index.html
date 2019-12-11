@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang='zh-CN'>
+	<head>
+		<meta charset='utf-8'>
+		<title>
+			JSONP
+		</title>
+		<style>
+			.get {
+				width:100px;
+				height: 50px;
+				background-color: blueviolet;
+			}
+			#content {
+				color:darkcyan;
+				font-size: 30px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="get" ></button>
+		<div id="content"></div>
+		<script>
+			// 原端口 8088 
+			//请求地址 3000 GET
+			//cbName => callback name
+			(function() {
+				function myjsonp(url, cbName ,callback) {
+				var createScript = document.createElement('script');
+					createScript.src = `${url}/?callback=${cbName}`;
+					createScript.async = true;
+				var head = document.head;
+				head.insertBefore(createScript, head.firstChild);
+				//script加载并执行完毕，获得arg，执行回调；
+				createScript.onload = function() {
+					callback(arg)
+					}
+				}
+				
+				window.myjsonp = myjsonp;
+			}())
+			
+		</script>
+		<script>
+			
+			window.onload = function() {
+			
+				function jsonp(arg) {
+					document.querySelector('#content').innerHTML = ('---'+ arg +'---')
+					//执行完立即 删除script标签
+					document.head.removeChild(document.head.firstChild)
+				}
+				function second() {
+				   return 	myjsonp('http://127.0.0.1:3000', 'second', jsonp);
+					
+				}
+				document.querySelector('.get').onclick = second;
+			}
+		</script>
+		
+		<!-- <script src="http://localhost:3000?callback=second">	
+		</script> -->
+		
+	</body>
+</html>
