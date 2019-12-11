@@ -36,5 +36,9 @@
          + session
          + a-t
          + body-parser
-         
+   4. 模拟jsonp解决跨域问题-简单版
+      - 不使用ajax
+      - 未使用XMLHTTPRequest对象
+      - 使用script标签`async`和 `onload`事件
+      - 注意回调传参问题
          
