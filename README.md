@@ -19,6 +19,7 @@
    - 员工名单增删
    - move打包函数
    - Array方法的自有实现
+   - `Promise构造函数、then、catch的简单实现`
 ---
 ## picsrotationdemo：
    1. 广告滚动加图片版
