@@ -42,4 +42,8 @@
       - 未使用XMLHTTPRequest对象
       - 使用script标签`async`和 `onload`事件
       - 注意回调传参问题
-         
+---
+## Exercises 实战训练
+   1. audio_play_demo
+      - 小小在线音乐播放器简单尝试
+         + `animatioon-play-state` CSS 属性
