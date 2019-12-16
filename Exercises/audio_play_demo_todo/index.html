@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>audioplayer</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="shortcut icon" style="height: 16px;width: 16px;" href="./img/icon.jpg"/>
+	</head>
+	<body>
+		<svg aria-hidden="true" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32">
+			<symbol id="icon-next" viewBox="0 0 32 32">
+				<path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16-16-7.163-16-16 7.163-16 16-16zM16 29c7.18 0 13-5.82 13-13s-5.82-13-13-13-13 5.82-13 13 5.82 13 13 13z"></path>
+				<path d="M18 16l-8-6v12z"></path>
+				<path d="M22 10h-4v12h4v-12z"></path>
+			</symbol>
+			<symbol id="icon-pause" viewBox="0 0 32 32">
+				<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM10 10h4v12h-4zM18 10h4v12h-4z">
+				</path>
+			</symbol>
+			<symbol id="icon-play" viewBox="0 0 32 32">
+				<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM12 9l12 7-12 7z"></path>
+			</symbol>
+			<symbol id="icon-back" viewBox="0 0 32 32">
+				<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z"></path>
+				<path d="M14 16l8-6v12z"></path>
+				<path d="M10 10h4v12h-4v-12z"></path>
+			</symbol>
+			<symbol id="icon-list" viewBox="0 0 32 32">
+				<path d="M12 2h20v4h-20v-4zM12 14h20v4h-20v-4zM12 26h20v4h-20v-4zM0 4c0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4s-4-1.791-4-4zM0 16c0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4s-4-1.791-4-4zM0 28c0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4s-4-1.791-4-4z"></path>
+			</symbol>
+			<symbol id="icon-volume" viewBox="0 0 32 32">
+				<path d="M22.485 25.985c-0.384 0-0.768-0.146-1.061-0.439-0.586-0.586-0.586-1.535 0-2.121 4.094-4.094 4.094-10.755 0-14.849-0.586-0.586-0.586-1.536 0-2.121s1.536-0.586 2.121 0c2.55 2.55 3.954 5.94 3.954 9.546s-1.404 6.996-3.954 9.546c-0.293 0.293-0.677 0.439-1.061 0.439v0zM17.157 23.157c-0.384 0-0.768-0.146-1.061-0.439-0.586-0.586-0.586-1.535 0-2.121 2.534-2.534 2.534-6.658 0-9.192-0.586-0.586-0.586-1.536 0-2.121s1.535-0.586 2.121 0c3.704 3.704 3.704 9.731 0 13.435-0.293 0.293-0.677 0.439-1.061 0.439z"></path>
+				<path d="M13 30c-0.26 0-0.516-0.102-0.707-0.293l-7.707-7.707h-3.586c-0.552 0-1-0.448-1-1v-10c0-0.552 0.448-1 1-1h3.586l7.707-7.707c0.286-0.286 0.716-0.372 1.090-0.217s0.617 0.519 0.617 0.924v26c0 0.404-0.244 0.769-0.617 0.924-0.124 0.051-0.254 0.076-0.383 0.076z">
+				</path>
+			</symbol>
+			<symbol id="icon-muted" viewBox="0 0 32 32">
+				<path d="M30 19.348v2.652h-2.652l-3.348-3.348-3.348 3.348h-2.652v-2.652l3.348-3.348-3.348-3.348v-2.652h2.652l3.348 3.348 3.348-3.348h2.652v2.652l-3.348 3.348 3.348 3.348z"></path>
+				<path d="M13 30c-0.26 0-0.516-0.102-0.707-0.293l-7.707-7.707h-3.586c-0.552 0-1-0.448-1-1v-10c0-0.552 0.448-1 1-1h3.586l7.707-7.707c0.286-0.286 0.716-0.372 1.090-0.217s0.617 0.519 0.617 0.924v26c0 0.404-0.244 0.769-0.617 0.924-0.124 0.051-0.254 0.076-0.383 0.076z"></path>
+			</symbol>
+		</svg>	
+		<div class="wrap">
+			<div class="left">
+				<div class="ablum">
+					<img src="./img/thz.png" alt="">
+				</div>
+				<div class="infoma">
+					<p id="name">童话镇</p>
+					<p id="singer">陈一发儿</p>
+				</div>
+			</div>
+			<div class="right">
+				<div class="lyc">
+					<p></p>
+					<p></p>
+					<p></p>
+				</div>
+				<div class="trans">
+					<img src="img/thz.png" alt="" class="">
+					<span id="">	
+					</span>
+				</div>
+				<div class="interface">
+					<audio  class="song-src" >
+						<source src="./sources/media/thz.mp3" type="audio/mp3"></source>
+					</audio>
+					<div class="play-et">
+						<div id="back">
+							<svg width='50' height="50">
+								<use x='0' y='0' xlink:href="#icon-back"></use>
+							</svg>
+						</div>
+						<div id="play">
+							<svg width='50' height="50">
+								<use x='0' y='0' xlink:href="#icon-play"></use>
+							</svg>
+						</div>
+						<div id="pre">
+							<svg width='50' height="50">
+								<use x='0' y='0' xlink:href="#icon-next"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="procrssbar">
+						<div id="top">
+							<pre class="song-name">童话镇</pre>
+							<div class="song-time">
+								<span>00:00</span>/
+								<span>00:00</span>
+							</div>
+						</div>
+						<div id="pro-bar">
+							<div class="bg"></div>
+							<div class="pointer"></div>
+							<div class="font-bar"></div>
+							<div class="bufferbar"></div>
+						</div>
+					</div>
+					<div class="song-list">
+						<div id="list">
+							<svg width='30' height="30" style="position: relative;left: 10px;top: 8px;">
+								<use x='0' y='0' xlink:href="#icon-list"></use>
+							</svg>
+						</div>
+						<ul id='flyby'>
+							<li>
+								<div class="list-title">
+									<span id="play-list">播放列表</span>/
+									<span class="song-counter">1</span>
+								</div>
+								<div class="del-cutdown">
+									<div id="del"></div>|
+									<div id="cutdown"><span>X</span></div>
+								</div>
+							</li>
+							<li>
+								<span id="num">1</span>
+								<span id="song-name"></span>
+								<span id="songer"></span>
+								<span id="duration"></span>
+							</li>
+							<li>
+								<span id="num">2</span>
+								<span id="song-name"></span>
+								<span id="songer"></span>
+								<span id="duration"></span>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="volume">
+						<div id="horn">
+							<svg width='35' height="35" style="position: relative;left: 8px;top: 5px;">
+								<use x='0' y='0' xlink:href="#icon-volume"></use>
+							</svg>
+						</div>
+						<div id="v-pb">
+							<div id="bg"></div>
+							<div id="v-font-bar"></div>
+							<div id="point-v"></div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-ablum-img"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/moudle.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>

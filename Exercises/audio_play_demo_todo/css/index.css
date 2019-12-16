@@ -1,0 +1,337 @@
+
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{
+	margin:0;
+	padding:0;
+	border:0;
+	} 
+body{
+	background:#fff;
+	color:#333;
+	font-size:16px;
+	font-family:"Mircosoft Yahei";
+	 } 
+ul,ol{
+	list-style-type:none;
+	} 
+select,input,img,select{
+	vertical-align:middle;
+	} 
+a{
+	text-decoration:none;
+	} 
+svg{
+	display: inline-block;
+	  stroke-width: 0;
+	  stroke: currentColor;
+	  fill: #706a6c;
+}
+symbol{
+	overflow: hidden;
+}
+
+.wrap {
+	width:1200px;
+	height: 400px;
+	border: 1px solid #b8b8b8;
+	margin: 100px auto;
+}
+.wrap>.left {
+	width: 300px;
+	height: 100%;
+	float: left;
+}
+/* .wrap>.left>.ablum {
+	
+} */
+.wrap>.left>.ablum>img {
+	width: 300px;
+	height: 300px;
+}
+.wrap>.left>.infoma{
+	width: 100%;
+	height: 100px;
+	background: #b4d6cb;
+}
+.wrap>.left>.infoma>#name{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.3em;
+}
+.wrap>.left>.infoma>#singer{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.wrap> .right {
+	height: 100%;
+	width: 900px;
+	float: right;
+	position: relative;
+	overflow: hidden;
+}
+.wrap> .right>div.lyc {
+	width: 700px;
+	height: 300px;
+	overflow: hidden;
+}
+.wrap> .right>.trans {
+	width: 200px;
+	height: 300px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.wrap> .right>.trans>img{
+	width: 130px;
+	height: 130px;
+	position:relative;
+	left: 36px;
+	top: 85px;
+}
+.trans-img	{
+		animation:cyf  6s  linear infinite;
+	}
+
+.wrap> .right>.trans> span {
+	display: block;
+	position: absolute;
+	height: 198px;
+	width: 198px;
+	top: 51px;
+	left: 1px;
+	background: url(../img/singlecover.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.wrap> .right>.interface{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+.wrap> .right>.interface >.play-et{
+	width: 180px;
+	height: 100%;
+	padding-left:20px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	
+}
+.wrap> .right>.interface >.play-et>#back{
+	width: 50px;
+	height: 50px;
+	flex: 1;	
+}
+.wrap> .right>.interface >.play-et>#play{
+	width: 50px;
+	height: 50px;
+	flex: 1;
+}
+.wrap> .right>.interface >.play-et>#pre{
+	width: 50px;
+	height: 50px;
+	flex: 1;
+}
+
+.wrap> .right>.interface >.procrssbar{
+	width:600px;
+	height: 100%;
+	padding: 0 0 0 20px;
+	box-sizing: border-box;
+}
+.wrap> .right>.interface >.procrssbar>#top{
+	width:100%;
+	height: 50%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.wrap> .right>.interface >.procrssbar>#top>.song-name{
+	display: block;
+	width: 40%;
+	height: 100%;
+	line-height: 50px;
+	margin: 0;
+	text-indent: 2em;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.wrap> .right>.interface >.procrssbar>#top>.song-time{
+	height: 100%;
+	line-height: 50px;
+	margin-right: 20px;
+}
+.wrap> .right>.interface >.procrssbar>#pro-bar{
+	width: 100%;
+	height: 50%;
+	position: relative;
+}
+.wrap> .right>.interface >.procrssbar>#pro-bar>.bg{
+	width: 560px;
+	height: 6px;
+	border-radius: 3px;
+	transform: translateX(10px);
+	position: absolute;
+	top: 22px;
+	left: 0;
+	background: #f3f3f3;
+}
+.wrap> .right>.interface >.procrssbar>#pro-bar>.pointer{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: translate(10px,20px);
+	background: #00a1d6;
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+.wrap> .right>.interface >.procrssbar>#pro-bar>.font-bar{
+	width: 0px;
+	height: 6px;
+	border-radius: 3px;
+	transform: translateX(10px);
+	position: absolute;
+	top: 22px;
+	left: 0;
+	background: #00a1d6;
+	z-index:2 ;
+}
+.wrap> .right>.interface >.procrssbar>#pro-bar>.bufferbar{
+	width: 0px;
+	height: 6px;
+	border-radius: 3px;
+	transform: translateX(10px);
+	position: absolute;
+	top: 22px;
+	left: 0;
+	background: #706a6c;
+	z-index: 1;
+}
+
+.wrap> .right>.interface >.song-list{
+	width: 50px;
+	height: 45px;
+	margin:auto 0 ;
+	position: relative;
+}
+.wrap> .right>.interface >.song-list #list{
+	width: 50px;
+	height: 45px;
+}
+.wrap> .right>.interface >.song-list>#flyby{
+	width:200px ;
+	height: 300px;
+	position: absolute;
+	background: #333333;
+	left:-100px;
+	top:-328px;
+	display: none ; 
+	opacity: .7;
+	color: #000000;
+}
+.wrap> .right>.interface >.song-list>#flyby  .list-title{
+	line-height: 25px;
+	float: left;
+}
+.wrap> .right>.interface >.song-list>#flyby li{
+	padding-left: 10px;
+	border-bottom: 1px solid #000;
+	height: 25px;
+}
+.wrap> .right>.interface >.song-list>#flyby >li:first-child:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.wrap> .right>.interface >.song-list>#flyby  .del-cutdown{
+	float: right;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.wrap> .right>.interface >.song-list>#flyby  .del-cutdown>#del{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	cursor: pointer;
+}
+.wrap> .right>.interface >.song-list>#flyby  .del-cutdown> #cutdown{
+	width: 25px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
+.wrap> .right>.interface >.song-list>#flyby  .del-cutdown> #cutdown >span {
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+}
+.wrap> .right>.interface >.volume{
+	width: 50px;
+	height: 45px;
+	margin:auto 0 ;
+	position: relative;
+}
+.wrap> .right>.interface >.volume> #horn {
+	width: 50px;
+	height: 45px;
+}
+.wrap> .right>.interface >.volume>#v-pb {
+	width: 50px;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	top: -100px;
+	z-index: 2;
+}
+.wrap> .right>.interface >.volume>#v-pb>#bg{
+	height: 90px;
+	width: 4px;
+	background: #fff;
+	border-radius:2px;
+	position: absolute;
+	left: 23px;
+	top:5px ;
+}
+.wrap> .right>.interface >.volume>#v-pb>#v-font-bar{
+	height: 40px;
+	width: 4px;
+	background: #00a1d6;
+	border-radius:2px;
+	position: absolute;
+	left: 23px;
+	bottom:5px ;
+}
+.wrap> .right>.interface >.volume>#v-pb>#point-v {
+	height: 10px;
+	width: 10px;
+	background: #00a1d6;
+	border-radius:50%;
+	position: absolute;
+	left: 20px;
+	bottom:40px ;
+}
+.wrap>.right> .bg-ablum-img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(../img/thz.png) repeat 0 0;
+	filter: blur(80px);
+	z-index: -1;
+}
+
+
+@keyframes cyf{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
