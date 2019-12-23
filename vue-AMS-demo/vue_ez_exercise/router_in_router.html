@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src='https://unpkg.com/vue@2.6.11/dist/vue.js' ></script>
+		<script src='https://unpkg.com/vue-router@3.1.3/dist/vue-router.js'  ></script>
+		<style>
+			.router-link-active {
+				color : deepskyblue;
+				font-style: italic;
+				font-size: 40px!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<router-link to="/">homepagehomepage</router-link>
+			<router-view></router-view>
+		</div>
+		
+		<template id="home">
+			<div>
+				<h3>我是主体部分，负责为首页守护</h3>
+				<router-link to="login">===LOGIN===</router-link>
+				<router-link to="register">++===REGISTER===++</router-link>
+				<hr>
+				<router-view style='width:400px;height:520px'></router-view>
+			</div>
+		</template>
+		
+		<script>
+			// document.querySelector('#vue').onload = function (){
+				//登陆自建
+				//zhucezhujain
+			const login = {template : '<img src="https://i0.hdslb.com/bfs/article/88daaae5008641cb7803274c982766009dffb5b7.png@1320w_1760h.webp">'}	
+			
+			const register = {template : '<img src="https://i0.hdslb.com/bfs/article/3c5f7499e637022037b79e954410462f531214e4.jpg@1320w_1730h.webp">'}
+			
+			const router = new VueRouter({
+				routes: [
+					{path: '/', 
+					component: {template : '#home'},
+					children : [
+						{path : 'login', component: login},
+						{path : 'register', component: register}
+					]
+					}
+				]
+			})
+				
+			
+			 new Vue({
+			 	el: '#app',
+			 	data : {
+			 		
+			 	},
+			 	methods :{
+			 		
+			 	},
+				router
+				
+			 })
+		 // }
+		</script>
+	</body>
+</html>

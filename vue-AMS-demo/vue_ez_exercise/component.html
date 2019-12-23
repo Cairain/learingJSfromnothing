@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src='https://unpkg.com/vue@2.6.11/dist/vue.js' ></script>
+		<script src='https://unpkg.com/vue-router@3.1.3/dist/vue-router.js'  ></script>
+		<style>
+			.router-link-active {
+				color : deepskyblue;
+				font-style: italic;
+				font-size: 40px!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<router-link to="/login/?id=1&name=yyx"  style="font-size:24px;"> ----登录--</router-link>
+			<router-link to='/register/5/girl' style="font-size:24px;">----注册----</router-link>
+			<router-view style="margin-top:50px;"></router-view>
+		</div>
+		
+		<template id="logincomp">
+			<div>
+				<input type="button" value="我是登陆组件的按钮">
+				<p style="color:firebrick">HELLO JAVASCRIPT</p>
+				<h1>{{$route.query.id}}---{{$route.query.name}}</h1>
+				<img  style="width:430px;height:600px;" src="https://i0.hdslb.com/bfs/article/f3c95c8a2d5f26f81fe463abbf31adb2112cbe89.jpg@.webp" alt="">
+			</div>
+		</template>
+		
+		<script>
+			// document.querySelector('#vue').onload = function (){
+				//登陆自建
+				//zhucezhujain
+				const register ={
+					template : '<div><h1 style="color:skyblue;">{{$route.params.id}}REGISTER FROM GOBAL{{$route.params.gender}} SCOPED</h1>'+ '<img src="https://i0.hdslb.com/bfs/sycp/creative_img/201912/088ce340be9f2b40f0d471bdcf522681.jpg"></div>',
+					created :function(){
+						console.log(this.$route)
+					}
+				}
+				
+				//luyou shili
+				const routerObj = new VueRouter({
+				routes :[
+					{path: '/', redirect : '/login'},
+					{path:'/login', component:{ template: '#logincomp',
+						data () {
+							return{}
+						},
+						created () {
+							console.log(this.$router)
+						}
+					}},
+					{path:'/register/:id/:gender', component : register}
+				]
+			})	
+			
+			 new Vue({
+			 	el: '#app',
+			 	data : {
+			 		msge : 'never si your frineds'
+			 	},
+			 	methods :{
+			 		
+			 	},
+				router: routerObj //guazai zhuce? 
+				
+			 })
+		 // }
+		</script>
+	</body>
+</html>
