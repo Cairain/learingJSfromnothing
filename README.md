@@ -29,6 +29,7 @@
    2. 简单的component组件
    3. router in router 路由嵌套
    4. multi_comp 命名视图 ，单页面多路由构成布局
+   5. 关于watch监听 和computed 计算属性
 ---
 ## node
    1. 评论页demo
