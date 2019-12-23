@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src='https://unpkg.com/vue@2.6.11/dist/vue.js'  ></script>
+		<style>	
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="firstname">+
+			<input type="text" v-model="lastname">=
+			<input type="text" v-model="fullname">
+		</div>
+		<div id="app2">
+			<input type="text" v-model="firstname">+
+			<input type="text" v-model="lastname">=
+			<input type="text" v-model="fullname">
+		</div>
+
+		<script>
+
+				//登陆自建
+				//zhucezhujain
+			 new Vue({
+			 	el: '#app',
+			 	data : {
+			 		firstname : '',
+					lastname: '',
+					fullname: ''
+			 	},
+			 	methods :{
+			 		
+			 	},
+				//watch 可以监视非DOM事件的DOM元素的变化   
+				watch : {
+					firstname : function(newval, oldval) {  //2 args
+						this.fullname = newval + '-'+ this.lastname
+					},
+					lastname : function(newval, oldval) {  //2 args
+						this.fullname = this.firstname + '-'+ newval
+					}
+				}
+			 })
+			 
+			 new Vue({
+				 el : '#app2',
+				 data :{
+					 firstname : '',
+					 lastname : ''
+				 },
+				 methods :{},
+				 //例子2 使用computed               计算属性
+				 computed : {
+					 fullname : function () {
+						 return this.firstname + '-' + this.lastname 
+					 }
+				 }
+			 })
+		</script>
+	</body>
+</html>
