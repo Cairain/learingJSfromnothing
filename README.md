@@ -24,8 +24,11 @@
 ## picsrotationdemo：
    1. 广告滚动加图片版
 ---
-## Vue-ams-demo:vue练习
+## Vue-ams-demo:vue练习    `尤雨溪NB`
    1. 车牌增、删、搜索功能实现
+   2. 简单的component组件
+   3. router in router 路由嵌套
+   4. multi_comp 命名视图 ，单页面多路由构成布局
 ---
 ## node
    1. 评论页demo
