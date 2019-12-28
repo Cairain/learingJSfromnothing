@@ -1,0 +1,19 @@
+{
+	"rotateData" :[
+		{ 
+			"id" : 1,
+			"url" : "https://www.bilibili.com/read/cv4236988?from=category_2",
+			"imgSrc" : "https://i0.hdslb.com/bfs/article/b865fc49a4c32eae1abf030888c9c0a0f308d188.jpg@860w_482h.webp"
+		},
+		{
+			"id" : 2,
+			"url" : "https://www.bilibili.com/read/cv4240893?from=category_2",
+			"imgSrc" : "https://i0.hdslb.com/bfs/article/792eb94ebf05a160eb089ca4ec3dba9d946be3e5.jpg@860w_482h.webp"
+		},
+		{
+			"id" : 3,
+			"url" : "https://www.bilibili.com/read/cv4240777?from=category_2",
+			"imgSrc" : "https://i0.hdslb.com/bfs/article/f1b93bfbc0c367dfa877aeab1bbadaa977020973.jpg@860w_482h.webp"
+		}
+	]
+}
